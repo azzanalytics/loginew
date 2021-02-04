@@ -6,70 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="login.css" />
-    <title>Sign in & Sign up Form</title>
+    <title>medicoV</title>
 </head>
 
 <body>
     <div class="container">
         <div class="forms-container">
-            <div class="signin-signup">
-                <form action="#" class="sign-in-form">
-                    <h2 class="title">Sign in</h2>
+            <div class="signin-sigup">
+                <!-----------------AQUI METO MI FORM DE PHP HARE 2 SI FUNCIONA VERE COMO HACERLO PARA REDES SOCIALES-->
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">" class="sign-in-form">
+                    <h2 class="title">Inicia Sesión</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" />
+                        <!----------------- HAY QUE DARLE ESTILO A ESTE ERROR Y AL EMAIL----------------------------->
+
+                        <input type="text" placeholder="email" name="email" />
+                        <span class="msg-error"><?php echo $email_err; ?></span>
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" />
+                        <!----------------------FUNCIONARA SIN LABEL? ES QUE NO LE VEO VALOR-->
+
+                        <input type="password" placeholder="password" name="password" />
+                        <span class="msg-error"><?php echo $password_err; ?></span>
                     </div>
-                    <input type="submit" value="Login" class="btn solid" />
-                    <p class="social-text">Or Sign in with social platforms</p>
-                    <div class="social-media">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+
+                    <input type="submit" value="Iniciar" class="btn solid" />
+
                 </form>
-                <form action="#" class="sign-up-form">
-                    <h2 class="title">Sign up</h2>
+
+                <p class="social-text">O inicie con sus redes sociales</p>
+                <div class="social-media">
+                    <!---------------------AQUI INICIAN LAS REDES SOCIALES------------------------>
+
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <!--------------METO MI FORM AQUI Y LO DE LAS REDES SOCIALES SI SE PUEDE, PERO PRIMERO LAS USARE DE MULAS-->
+                <!--------------SI FUNCIONA SIN REDES SOCIALES, ENTONCES YA CONTINUO CREANDO LOS ERRORES EN PHP PARA LAS REDES SOCIALES ES BACKEND-->
+
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">" class="sign-up-form">
+
+                    <h2 class="title">Registrese</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" />
+
+
+                        <input type="text" placeholder="username" text="username" />
+                        <span class="msg-error"><?php echo $username_err; ?></span>
+
+
+
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" />
+
+                        <input type="email" placeholder="email" text="email" />
+                        <span class="msg-error"><?php echo $email_err; ?></span>
+
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
+
                         <input type="password" placeholder="Password" />
+                        <span class="msg-error"><?php echo $password_err; ?></span>
                     </div>
-                    <input type="submit" class="btn" value="Sign up" />
-                    <p class="social-text">Or Sign up with social platforms</p>
-                    <div class="social-media">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+
+                    <input type="submit" class="btn" value="Registrarse" />
+
+                </form>
+                <!---------------------LAS REDES SOCIALES PARA REGISTRARSE MI FROM DEBE CERRAR ANTES-->
+                <p class="social-text">O registrate con tus redes sociales</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
                 </form>
             </div>
         </div>
@@ -77,13 +108,12 @@
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">
-                    <h3>New here ?</h3>
+                    <h3>¿Eres nuevo aquí?</h3>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-                        ex ratione. Aliquid!
+                        Descuida, realmente nos esforzamos para que tengas una buena atención y una buena experiencia.
                     </p>
                     <button class="btn transparent" id="sign-up-btn">
-                        Sign up
+                        Registrarse
                     </button>
                 </div>
                 <img src="img-1/log.svg" class="image" alt="" />
@@ -96,7 +126,7 @@
                         laboriosam ad deleniti.
                     </p>
                     <button class="btn transparent" id="sign-in-btn">
-                        Sign in
+                        Inicia sesión
                     </button>
                 </div>
                 <img src="img-1/register.svg" class="image" alt="" />
