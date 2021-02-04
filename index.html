@@ -1,59 +1,110 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="nonauthor">
-    <meta name="keywords" content="SARS-Cov-2, covid, covid-19, covid puebla, covid-19 puebla, dra marion pearl, covid dra marion pearl">
-    <meta name="description" content="Somos un grupo médico que se dedica al tratamiento de pacientes con COVID-19, mediante el uso exitoso de la ciencia aplicada a la médicina.">
-    <link rel="icon" href="imagen/logo.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="copyright" content="medicov">
-    <title>MedicoV | Expertos en COVID </title>
-    <!-------------estilos------------------------>
-    <link rel="stylesheet" href="css/styles.css">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
-
-</head>
-
-<body>
-    <div class="container-all">
-        <div class="ctn-form">
-            <img src="imagen/logo.jpg" alt="" class="logo">
-            <h1 class="title">Iniciar Sesión</h1>
-
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                <label for="">Email</label>
-                <input type="text" name="email">
-                <span class="msg-error"><?php echo $email_err; ?></span>
-
-                <label for="">Contraseña</label>
-                <input type="password" name="password">
-                <span class="msg-error"><?php echo $password_err; ?></span>
-
-                <input type="submit" value="Iniciar">
-            </form>
-            <span class="text-footer">¿Aún no te has registrado?
-                <a href="register.php"> Registrate</a>
-            </span>
-
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign in & Sign up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" class="btn" value="Sign up" />
+            <p class="social-text">Or Sign up with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
         </div>
-        <div class="ctn-text">
-            <div class="capa"></div>
-            <h1 class="title-description">Lorem ipsum dolor sit amet.</h1>
-            <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, non, impedit, cupiditate quod officia sint vitae ducimus minus aliquid asperiores ad? Culpa impedit deleniti, facilis cumque illum modi nihil tempora.</p>
+      </div>
 
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+              ex ratione. Aliquid!
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
         </div>
-
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One of us ?</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              laboriosam ad deleniti.
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+          </div>
+          <img src="img/register.svg" class="image" alt="" />
+        </div>
+      </div>
     </div>
 
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>
