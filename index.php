@@ -2,6 +2,22 @@
 
 require 'database.php';
 
+$message = '';
+
+if (!empty($_POST['email']) && !empty($_POST['password'])){
+    $sql = "INSER INTO user (email, password) VALUES (:email, :password)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email',$_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $stmt->bindParam(':password', $password);
+    if ($stmt->execute()) {
+        $message = 'Successfully create new user';
+    
+    }else{
+        $message = 'Sorry there must have been an issue creating your acount'; 
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +35,7 @@ require 'database.php';
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="index.php" class="sign-in-form" method="post">
+                <form action="bienvenida.php" class="sign-in-form" method="post">
                     <h2 class="title">Sign in</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -46,7 +62,10 @@ require 'database.php';
                         </a>
                     </div>
                 </form>
-                <form action="signup.php" class="sign-up-form" method="post">
+                <form action="#sign-in-btn" class="sign-up-form" method="post">
+                    <?php if(!empy($message)); ?>
+                    <p><?= $message ?></p>
+                    <?php endif; ?>
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -91,7 +110,7 @@ require 'database.php';
                     <button class="btn transparent" id="sign-up-btn">
                         Sign up
                     </button>
-                </div>
+                    </div>
                 <img src="img-1/log.svg" class="image" alt="" />
             </div>
             <div class="panel right-panel">
@@ -104,6 +123,7 @@ require 'database.php';
                     <button class="btn transparent" id="sign-in-btn">
                         Sign in
                     </button>
+
                 </div>
                 <img src="img-1/register.svg" class="image" alt="" />
             </div>
