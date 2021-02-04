@@ -1,3 +1,8 @@
+<?php
+
+require "code-login.php";
+
+?>
 
 
 <!DOCTYPE html>

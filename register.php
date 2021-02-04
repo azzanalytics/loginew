@@ -1,3 +1,9 @@
+<?php
+
+include 'code-register.php';
+
+ ?>
+
 
 <!DOCTYPE html>
 <html lang="es"
